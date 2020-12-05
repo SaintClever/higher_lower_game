@@ -6,13 +6,20 @@ print(logo)
 score = 0
   
 def game(score):
+  # Generate a random account from the game data.
+  # Use random sample to prevent same same pieces of dat to be compared
   compare = sample(data, 2)
   a = compare[0]
   b = compare[1]
     
-  print(f"Compare A: {a['name']}, {a['description']}, from {a['country']}.")
+  def a_or_b_func(a_or_b):
+    """ Takes the compare data, formats it and returns it into printable format """
+    return f"{a_or_b['name']}, {a_or_b['description']}, from {a_or_b['country']}."
+  # print(test(a), test(b))
+  
+  print(f"Compare A: {a_or_b_func(a)}")
   print(vs)
-  print(f"Against B: {b['name']}, {b['description']}, from {b['country']}.")
+  print(f"Against B: {a_or_b_func(b)}")
   # print(a['follower_count'], b['follower_count']) # follower count
 
   
